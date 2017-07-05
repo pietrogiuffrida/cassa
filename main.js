@@ -23,7 +23,7 @@ function createWindow () {
   }))
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+//   mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
@@ -58,3 +58,37 @@ app.on('activate', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+
+// https://github.com/fyears/electron-python-example
+// http://krasimirtsonev.com/blog/article/Nodejs-managing-child-processes-starting-stopping-exec-spawn
+// https://nodejs.org/api/child_process.html
+let child = null
+
+function createChild() {
+  let script = path.join('python3 ', __dirname, 'logica', 'api.py')
+
+  var spawn = require('child_process').exec;
+  var child = spawn(script, function(error, stdout, stderr) {
+
+    if (error !== null) {
+      console.log('exec error: ' + error);
+      app.quit()
+    }
+
+    if (stderr !== "") {
+      console.log('exec stderr: ' + stderr);
+      app.quit()
+    }
+
+  });
+
+}
+
+function exitChild() {
+  child.kill()
+  child = null
+}
+
+app.on('ready', createChild)
+app.on('will-quit', exitChild)
