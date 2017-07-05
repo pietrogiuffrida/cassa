@@ -1,20 +1,17 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
+  "name": "cassa",
+  "version": "0.0.1",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/pietrogiuffrida/cassa",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "cassa",
+    "Pos",
   ],
-  "author": "GitHub",
+  "author": "Pietro Giuffrida",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "~1.6.2"
