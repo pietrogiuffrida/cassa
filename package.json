@@ -14,7 +14,7 @@
   "author": "Pietro Giuffrida",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "~1.6.2",
+    "electron": "~9.1.0",
     "electron-rebuild": "^1.5.11",
     "sqlite3": "~3.1.8"
   }
